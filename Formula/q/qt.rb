@@ -170,10 +170,6 @@ class Qt < Formula
     ]
     inreplace assistant_files, '"Assistant.app/Contents/MacOS/Assistant"', '"Assistant"'
 
-    # Allow generating unofficial pkg-config files for macOS to be used by other formulae.
-    # Upstream currently does not provide them: https://bugreports.qt.io/browse/QTBUG-86080
-    inreplace "qtbase/cmake/QtPkgConfigHelpers.cmake", "(NOT UNIX OR QT_FEATURE_framework)", "(NOT UNIX)"
-
     config_args = %W[
       -release
 
